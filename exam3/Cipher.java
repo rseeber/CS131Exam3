@@ -9,12 +9,20 @@ public class Cipher {
     }
 
     public String caeserCipher(String input){
-        //TODO: implement
-        String output = input;
+        //performs caeserCipher by using the rotN function, 
+        //inputting the predetermined interval
+        String output = rotN(input, interval);
         return output;
     }
 
     public String rot13(String input){
+        //uses the rotN() function with a jump size of 13
+        String output = rotN(input, 13);
+        return output;
+    }
+
+    //performs the rot function, but you can input your own jump value
+    public String rotN(String input, int jump){
         //TODO: implement
         String output = input;
         return output;
