@@ -6,11 +6,14 @@ class Main {
         Cipher cipher = new Cipher(3);
         //the message we're going to be encrypting
         String msg = "Hello, World";
+        System.out.println("This is orginal message:\n" + msg);
         
         //print caeser cipher
+        System.out.println("This is Caeser Cipher (jump 3):");
         System.out.println(cipher.caeserCipher(msg));
         
         //print rot13
+        System.out.println("This is Rotation 13: ");
         System.out.println(cipher.rot13(msg));
         
 

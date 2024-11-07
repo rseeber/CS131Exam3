@@ -23,8 +23,18 @@ public class Cipher {
 
     //performs the rot function, but you can input your own jump value
     public String rotN(String input, int jump){
-        //TODO: implement
-        String output = input;
+       
+        String output = "";
+        for(int i = 0; i < input.length(); i++){
+            char c = (char)(input.charAt(i) + jump);
+            
+            //loop around after z, ends up at a
+            while( c > 'z'){
+                c -= 26;
+            }
+            //appends c to the end of output
+            output += c;
+        }
         return output;
     }
 
