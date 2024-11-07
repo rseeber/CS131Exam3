@@ -1,5 +1,9 @@
 package exam3;
 
+import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+
 public class Cipher {
     //interval to use for the caeser cipher
     int interval;
@@ -13,6 +17,10 @@ public class Cipher {
         //inputting the predetermined interval
         String output = rotN(input, interval);
         return output;
+    }
+
+    public String undoCaeser(String input){
+        return rotN(input, 26-interval);
     }
 
     public String rot13(String input){
@@ -49,14 +57,27 @@ public class Cipher {
     //this isn't part of the project requirements, I'm just adding a little something extra because
     // he encouraged us to have fun with it.
     public String getChecksum(String msg, String passwd){
-        //TODO: implement
-        String checksum = msg + passwd;
-        return checksum;
+        try{
+
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            String input = msg+passwd;
+            
+            md.update(input.getBytes(StandardCharsets.UTF_8));
+            byte[] digest = md.digest();
+            
+            String hex = String.format("%064X", new BigInteger(1, digest));
+
+            return hex;
+        }
+        catch (Exception NoSuchAlgorithmException){
+            System.err.println("Hash error :/");
+            return "";
+        }
     }
 
     //again not required, just a little extra
     //checks whether the provided checksum matches a message-password combination
-    public boolean verifyChecksum(String msg, String passwd){
-        return true;
+    public boolean verifyChecksum(String msg, String passwd, String checksum){
+        return checksum.equals(getChecksum(msg, passwd));
     }
 }
