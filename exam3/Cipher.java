@@ -26,11 +26,19 @@ public class Cipher {
        
         String output = "";
         for(int i = 0; i < input.length(); i++){
-            char c = (char)(input.charAt(i) + jump);
-            
-            //loop around after z, ends up at a
-            while( c > 'z'){
-                c -= 26;
+            char original = input.charAt(i);
+            char c = (char)(original + jump);
+
+            //don't shift c, if it isn't a letter
+            if(original < 'A' || (original > 'Z' && original < 'a') || original > 'z'){
+                c = original;
+            }
+            //if it's a letter, make sure we loop it around from Z back to A
+            else{
+                //Genesis's while loop, with updated conditions by River
+                while((c > 'Z' && original <= 'Z') || (c > 'z')){
+                    c -= 26;
+                }
             }
             //appends c to the end of output
             output += c;

@@ -10,7 +10,10 @@ class Main {
         
         //print caeser cipher
         System.out.println("This is Caeser Cipher (jump 3):");
-        System.out.println(cipher.caeserCipher(msg));
+        String caeser = cipher.caeserCipher(msg);
+        System.out.println(caeser);
+        System.out.println("\nUndo:\n");
+        System.out.println(cipher.rotN(caeser, 26 - 3));
         
         //print rot13
         System.out.println("This is Rotation 13: ");
