@@ -1,0 +1,9 @@
+The following transmission should be decryptable using a Caeser Cipher of 3, and pass the checksum test
+
+(password: 'apollo')
+
+[MESSAGE]:
+Zh fkrrvh wr jr wr wkh Prrq. Zh fkrrvh wr jr wr wkh Prrq... Zh fkrrvh wr jr wr wkh Prrq lq wklv ghfdgh dqg gr wkh rwkhu wklqjv, qrw ehfdxvh wkhb duh hdvb, exw ehfdxvh wkhb duh kdug; ehfdxvh wkdw jrdo zloo vhuyh wr rujdqlch dqg phdvxuh wkh ehvw ri rxu hqhujlhv dqg vnloov, ehfdxvh wkdw fkdoohqjh lv rqh wkdw zh duh zloolqj wr dffhsw, rqh zh duh xqzloolqj wr srvwsrqh, dqg rqh zh lqwhqg wr zlq, dqg wkh rwkhuv, wrr.
+
+[CHECKSUM]:
+48548EF29481AE25C59B7946EC609FE222037D6D29EAD9D2EDC2D84F55A6EACA
