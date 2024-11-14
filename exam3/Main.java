@@ -62,7 +62,9 @@ class Main {
                 }
                 if(secure){
                     System.out.println("\n[Decrypted Message]:\n" + output + "\n\n");
-                    System.out.println("[Notice]:\nChecksum matches message + password combination. Your transmission is from who you think it's from.\n");
+                    if(doChecksum == 1){
+                        System.out.println("[Notice]:\nChecksum matches message + password combination. Your transmission is from who you think it's from.\n");
+                    }
                 }
                 else{
                     System.out.println("CHECKSUM DOESN'T MATCH MESSAGE + PASSWORD COMBINATION. ABORTING\n");
