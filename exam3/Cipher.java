@@ -1,3 +1,12 @@
+/*
+ * EXAM #3
+ * 
+ * Project Name: Caeser Cipher and Checksum
+ * Developers: River Seeber, and Genesis Vasquez
+ * Date: November 13, 2024
+ * Version: 1.6.1
+ */
+
 package exam3;
 
 import java.math.BigInteger;
